@@ -14,9 +14,9 @@ def choose_solution():
           "Для ответа напишите 1\n (2) Пример решения линейного или нелинейного неравенства. Для ответа напишите 2")
     n = int(input())
     if n == 1:
-        racionalSOLUTION()
+        #racionalSOLUTION()
     elif n == 2:
-        LinealSolution()
+        #LinealSolution()
     else:
         print("Ты не нато нажал.")
 inequality = str(input())
