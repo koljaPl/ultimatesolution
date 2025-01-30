@@ -19,3 +19,19 @@ def LinealSolution():
 
 # Выводим результат
 #print("Решение:", solution)
+
+user_input = input("Введите квадратное уравнение (например, x**2 - 5*x + 6 = 0): ")
+eq = Eq(sympify(user_input.split("=")[0]), sympify(user_input.split("=")[1]))
+solution = solve(eq, x)
+print(f"Решения: {solution}")
+
+x = symbols('x')
+user_input = input("Введите уравнение (например, 2*x + 3 = 7): ")
+eq = Eq(sympify(user_input.split("=")[0]), sympify(user_input.split("=")[1]))
+solution = solve(eq, x)
+print(f"Решение: {solution}")
+
+user_input = input("Введите уравнение (например, x**4 - 5*x**2 + 4 = 0): ")
+eq = Eq(sympify(user_input.split("=")[0]), sympify(user_input.split("=")[1]))
+solution = solve(eq, x)
+print(f"Решения: {solution}")
