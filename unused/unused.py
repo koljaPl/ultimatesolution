@@ -10,7 +10,6 @@ def LinealSolution():
 
 # Определяем переменные
 #x = symbols('x')
-
 # Задаем неравенство 2 / sqrt((x - sqrt(3) * sqrt(3) - 2 * x + 1)) = g(x)
 #inequality = (4 - sqrt(17)) * (3 * x + 5) >= 0
 

@@ -1,5 +1,4 @@
 from sympy import sympify
-from math import pow
 
 def ArithmeticSolution():
     print("Ты выбрал арифмитическое вырожение.")
