@@ -17,20 +17,20 @@ def choose_solution():
     "(6) Для выбора дифференцирование и интегрирование нажмите 6 НЕРАБОТАЕТ\n",)
     n = int(input("Введи какой тип примера хочешь решать:"))
     if n == 1:
-        ArithmeticSolution()
+        ArithmeticSolution()    # Вызывает функцию по решению арифметических выражений                      РАБОТАЕТ
     elif n == 2:
-        AlgebraicSolution()
+        AlgebraicSolution()     # Вызывает функцию по решению алгебраических выражений                      ПОКА НЕ РАБОТАЕТ
     elif n == 3:
-        PercentsSolution()
+        PercentsSolution()      # Вызывает функцию по решению процентов с x и без                           РАБОТАЕТ
     elif n == 4:
-        LogExpandSolution()
+        LogExpandSolution()     # Вызывает функцию по решению логарифмов и экспонентов                      НЕ РАБОТАЕТ
     elif n == 5:
-        TrigonometricSolution()
+        TrigonometricSolution() # Вызывает функцию по решению тригонометрических уравнений и/или выражений  НЕ РАБОТАЕТ И СКОРЕЕ ВСЕГО НЕ БУДЕТ
     elif n == 6:
-        DiffIntegrateSolution()
+        DiffIntegrateSolution() # Вызывает функцию по решению дифференцирование и интегрирование            НЕ РАБОТАЕТ
     else:
         print("Ты не нато нажал.")
-        choose_solution()
+        choose_solution() # Перезапуск функции если пользователь ввел не ту цифру
 
 #Вызов главной функции
 try:
