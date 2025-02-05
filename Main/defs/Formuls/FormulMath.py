@@ -1,0 +1,3 @@
+
+def FormulMath():
+    print()
