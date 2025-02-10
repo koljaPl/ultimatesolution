@@ -35,3 +35,25 @@ user_input = input("Введите уравнение (например, x**4 - 
 eq = Eq(sympify(user_input.split("=")[0]), sympify(user_input.split("=")[1]))
 solution = solve(eq, x)
 print(f"Решения: {solution}")
+
+# Парсер знака процентов в стандартный для питона /
+def parse_percent(expression: str):
+    expression = expression.replace('%', '/100') # Заменяем проценты
+    expression = expression.replace('×', '*')    # Заменяем красивый знак умножения
+    expression = expression.replace('√', 'sqrt') # Заменяем корень
+    expression = expression.replace('÷', '/')    # Заменяем знак деления
+    expression = expression.replace('−', '-')    # Заменяем минус
+    expression = expression.replace('+', '+')    # Заменяем плюс
+    expression = expression.replace('²', '**2')  # Заменяем возведение во вторую степень
+    expression = expression.replace('π', 'pi')   # Заменяем число пи
+    return sympify(expression)
+    # Вот два парсера, два варианта
+def parse_percent(expression: str):
+    """Парсит проценты и математические символы в понятный для SymPy формат."""
+    replacements = {
+        '%': '/100', '×': '*', '√': 'sqrt', '÷': '/',
+        '−': '-', '²': '**2', '³': '**3', 'π': 'pi'
+    }
+    for old, new in replacements.items():
+        expression = expression.replace(old, new)
+    return sympify(expression)

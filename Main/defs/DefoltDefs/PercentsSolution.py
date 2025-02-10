@@ -1,8 +1,14 @@
-from sympy import symbols, solve, sqrt, Eq, sympify, factorial, simplify
+from sympy import symbols, solve, sqrt, Eq, sympify, factorial, simplify, pi
 
-# Парсер знака процентов в стандартный для питона /
+# Парсер для красивых чисел для питона /
 def parse_percent(expression: str):
-    expression = expression.replace('%', '/100')  # Заменяем проценты
+    """Парсит проценты и математические символы в понятный для SymPy формат."""
+    replacements = {
+        '%': '/100', '×': '*', '√': 'sqrt', '÷': '/',
+        '−': '-', '²': '**2', '³': '**3', 'π': 'pi'
+    }
+    for old, new in replacements.items():
+        expression = expression.replace(old, new)
     return sympify(expression)
 
 # Не парсер, но тоже интерестно, решает задачи для уравнений процентов с x
@@ -27,7 +33,7 @@ def PercentsSolution():
                 PercentsSolution()
         elif n == 2: # без x
             example = str(input("Введите выражение без x: "))
-            result = parse_percent(example).evalf(3)  # Преобразуем и вычисляем
+            result = parse_percent(example).evalf(4)  # Преобразуем и вычисляем
             print("Ответ:", result)
         else:
             print("Ты ввел что-то не то, попробуй еще.")
