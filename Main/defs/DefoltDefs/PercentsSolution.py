@@ -11,7 +11,7 @@ def parse_percent(expression: str):
         expression = expression.replace(old, new)
     return sympify(expression)
 
-# Не парсер, но тоже интерестно, решает задачи для уравнений процентов с x
+# Не парсер, но тоже интересно, решает задачи для уравнений процентов с x
 def solve_percent_equation(equation_str):
     equation_str = equation_str.replace('%', '/100')  # Заменяем проценты
     lhs, rhs = equation_str.split('=')  # Разделяем уравнение
@@ -40,3 +40,12 @@ def PercentsSolution():
             PercentsSolution()
     except Exception as e:
         print("Ошибка:", e)
+
+
+try:
+    PercentsSolution()
+except KeyboardInterrupt:
+    print("\n\nПрограмма завершилась ручным выключением.")
+except ValueError:
+    print("\n\nТы ввел что-то не то.")
+    PercentsSolution()
